@@ -60,8 +60,6 @@ Here are some sample names available in the dictionary:
 |----------------|-------------------------------|
 | Mawuli         | God exists                    |
 | Sena           | God has given                 |
-| Dzifa          | There is peace                |
-| Elikplim       | God is with me                |
 
 *Note*: More names can be added in the future.
 
