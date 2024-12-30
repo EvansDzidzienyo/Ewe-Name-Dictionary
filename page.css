@@ -1,0 +1,43 @@
+
+
+
+body{
+background-color:rgba(169, 190, 192, 0.53);
+font-size:16px;
+}
+
+#wrapper{
+ width:90%;
+margin:1% auto;
+}
+
+header{
+	background-color:#000033;
+	color:white;
+}
+
+h1, h2{
+	margin:0;
+	padding:12px, 20px;
+	text-align:center;
+}
+
+h1{
+	padding-bottom: 0px;
+	font-size:36px;
+	padding-left:23px;
+}
+
+h2{
+	padding-top: 0px;
+	font-size:18px;
+	padding-left:23px;
+	coolor:rgb(205, 228, 225);
+}
+
+footer{
+	background-color:#000033;
+	color:white;
+	padding:12px 20px;
+	text-align:center;
+}
