@@ -1,84 +1,60 @@
+# Ewe Name Dictionary
 
-# Ewe Name Dictionary 🌍
+A small PHP application for looking up a limited set of Ewe names and the meanings recorded for them in this project.
 
-Welcome to the **Ewe Name Dictionary**, a mini project showcasing the names from the Ewe tribe of Ghana. This project uses PHP to allow users to search for the meanings of some names in the Ewe language. The current implementation uses a `switch` function to handle the lookup process but is designed with scalability in mind, allowing future integration with a database for an enriched experience.
+## Current scope
 
----
+- Searches a fixed list of 14 names.
+- Accepts case-insensitive name input.
+- Validates submitted input on the server (3–20 letters).
+- Escapes user-provided text before rendering it in HTML.
+- Displays a clear message when a name is not in the current list.
 
-## Features ✨
+The meanings are retained from the original project. They have **not** been independently checked against an authoritative Ewe language source, so this repository should be treated as a small demonstration rather than a comprehensive or authoritative dictionary.
 
-- **Search for Name Meanings:** Users can input a name, and the application will return its meaning (if available).  
-- **Simple and Lightweight:** The code uses a `switch` function in PHP to handle name lookups efficiently.  
-- **Easily Expandable:** The structure allows for future enhancements, such as integrating a database to support a larger repository of names and meanings.  
+## Technology
 
----
+- PHP 8+
+- HTML
+- CSS
 
-## Technologies Used 🛠️
+There is no database dependency in the current implementation.
 
-- **PHP**: The core programming language used for building the application.
-- **HTML/CSS**: For the basic front-end interface.
-- **XAMPP or Localhost Setup**: Used for testing the application locally.
+## Run locally
 
----
+1. Install PHP 8+ or XAMPP.
+2. Clone this repository into your local web server's document root (for XAMPP, this is usually the `htdocs` directory).
+3. Start Apache.
+4. Open `http://localhost/Ewe-Name-Dictionary/second.php` in your browser.
 
-## How to Set Up 🚀
+You can also run PHP's built-in development server from the repository directory:
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/CodeKing/EweNameDictionary.git
-   ```
-2. **Install XAMPP**:
-   - Download XAMPP from [Apache Friends](https://www.apachefriends.org/).
-   - Ensure Apache and MySQL are running.
+```bash
+php -S localhost:8000
+```
 
-3. **Place the Project in the Local Server**:
-   - Move the cloned folder to the `htdocs` directory in your XAMPP installation folder.
+Then visit `http://localhost:8000/second.php`.
 
-4. **Run the Application**:
-   - Open your browser and navigate to:
-     ```
-     http://localhost/EweNameDictionary
-     ```
+## Run tests
 
----
+```bash
+php tests/name_lookup_test.php
+php -l second.php
+php -l name_lookup.php
+```
 
-## Future Enhancements 🌟
+GitHub Actions runs the syntax checks and lookup tests on pushes and pull requests.
 
-This project is designed with flexibility and scalability in mind. Here are some planned features for future releases:
-- **Database Integration**: Expand the project to search names and their meanings from a MySQL database.
-- **User Contributions**: Allow users to add names and meanings dynamically.
-- **Search Filters**: Add filters for gender, origin, or name type.
-- **Responsive UI**: Enhance the front-end with modern design elements.
+## Project structure
 
----
+- `second.php` — form, request validation, and result display.
+- `name_lookup.php` — fixed name-to-meaning lookup function.
+- `tests/name_lookup_test.php` — basic lookup tests.
+- `page.css`, `inputs.css` — page styling.
 
-## Example Names 🌟
+## Limitations and possible next steps
 
-Here are some sample names available in the dictionary:
-
-| **Name**       | **Meaning**                   |
-|----------------|-------------------------------|
-| Mawuli         | God exists                    |
-| Sena           | God has given                 |
-
-*Note*: More names can be added in the future.
-
----
-
-## Contributing 🤝
-
-Contributions are welcome! If you'd like to contribute:
-1. Fork the repository.
-2. Make your changes and test them locally.
-3. Create a pull request with a detailed explanation of your changes.
-
----
-
-## Feedback and Support 💬
-
-If you encounter any issues or have suggestions for improvements, feel free to open an issue in the repository or reach out to me directly.
-
----
-
-Enjoy exploring the rich culture and heritage of the Ewe tribe through this mini-name dictionary! 🌍
-
+- The list is small and manually maintained.
+- Name meanings, spelling variants, tone/diacritics, and contextual interpretations need review by fluent Ewe speakers or reliable linguistic references.
+- The application does not currently support user contributions, search suggestions, or a database.
+- A future expansion should add documented sources and a review process for each entry before describing the project as a reliable dictionary.
