@@ -1,0 +1,27 @@
+name: PHP validation
+
+on:
+  push:
+    branches: [main, "improvement/**"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+      - name: Check PHP syntax
+        run: |
+          php -l second.php
+          php -l name_lookup.php
+          php -l tests/name_lookup_test.php
+      - name: Run lookup tests
+        run: php tests/name_lookup_test.php
